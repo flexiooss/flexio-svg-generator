@@ -1,17 +1,12 @@
 package generator;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public abstract class Attributes implements Attribute {
-    private Map<String, String> attributes;
+    private Map<String, String> attributes = new LinkedHashMap<>();
 
-    public Attributes() {
-        attributes = new HashMap<>();
-    }
-
-
-    public Attributes attributes(String name, String value) {
+    public Attribute attributes(String name, String value) {
         attributes.put(name, value);
         return this;
     }

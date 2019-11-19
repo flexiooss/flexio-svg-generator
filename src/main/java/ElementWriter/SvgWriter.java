@@ -34,12 +34,14 @@ public class SvgWriter implements ElementWriter {
 
     private static String printAttributes(Attribute attributes) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (Map.Entry<String, String> entry : attributes.attributes().entrySet()) {
-            stringBuilder.append(" ")
-                    .append(entry.getKey())
-                    .append("=\"")
-                    .append(entry.getValue())
-                    .append("\"");
+        if (attributes != null) {
+            attributes.attributes().forEach((key, value) -> {
+                stringBuilder.append(" ")
+                        .append(key)
+                        .append("=\"")
+                        .append(value)
+                        .append("\"");
+            });
         }
         return stringBuilder.toString();
     }

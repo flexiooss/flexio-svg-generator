@@ -1,7 +1,6 @@
-import generator.Attribute;
+package TRS;
 
-import java.io.FileNotFoundException;
-import java.io.Writer;
+import generator.Attribute;
 
 public interface DataSet {
     static DataSet.Builder builder() {

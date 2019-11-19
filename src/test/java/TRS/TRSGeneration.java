@@ -1,3 +1,5 @@
+package TRS;
+
 import ElementWriter.SvgWriter;
 import generator.element.Link;
 import generator.element.Rectangle;
@@ -16,7 +18,7 @@ public class TRSGeneration {
     private SvgWriter writer;
 
     public TRSGeneration() throws FileNotFoundException {
-        this.outputStream = new PrintWriter("test.svg");
+        this.outputStream = new PrintWriter("src/test/java/TRS/test.svg");
         writer = new SvgWriter(outputStream);
         this.positionX = 0;
     }
@@ -58,7 +60,7 @@ public class TRSGeneration {
                 .height(HEIGHT)
                 .width(String.valueOf(data.width()))
                 .position(new Point(String.valueOf(positionX), "0"));
-        rect.fill(data.color()).classSelector("zone");
+        rect.fill(data.color());
         rect.id("rect" + i);
         rect.classSelector("zone");
         dataSet.to(rect);
