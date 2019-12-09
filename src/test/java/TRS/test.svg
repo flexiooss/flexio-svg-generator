@@ -1,1 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%" xml:lang="fr"><a xlink:href="#"><rect height="20" width="200" x="0" y="0" fill="yellow" id="rect0" class="zone" data-event="click" data-type="record" data-resource-id="123456" data-record-id="0"/></a><a xlink:href="#"><rect height="20" width="100" x="200" y="0" fill="Lime" id="rect1" class="zone" data-event="click" data-type="record" data-resource-id="123456" data-record-id="1"/></a><a xlink:href="#"><rect height="20" width="20" x="300" y="0" fill="red" id="rect2" class="zone" data-event="click" data-type="record" data-resource-id="123456" data-record-id="2"/></a><a xlink:href="#"><rect height="20" width="100" x="320" y="0" fill="Lime" id="rect3" class="zone" data-event="click" data-type="record" data-resource-id="123456" data-record-id="3"/></a><a xlink:href="#"><rect height="20" width="20" x="420" y="0" fill="red" id="rect4" class="zone" data-event="click" data-type="record" data-resource-id="123456" data-record-id="4"/></a><a xlink:href="#"><rect height="20" width="200" x="440" y="0" fill="Lime" id="rect5" class="zone" data-event="click" data-type="record" data-resource-id="123456" data-record-id="5"/></a><a xlink:href="#"><rect height="20" width="200" x="640" y="0" fill="yellow" id="rect6" class="zone" data-event="click" data-type="record" data-resource-id="123456" data-record-id="6"/></a></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%"
+     xml:lang="fr">
+    <a xlink:href="#">
+        <rect height="20" width="200" x="0" y="0" fill="yellow" id="rect0" class="zone"
+              data-data="eyJldmVudHMiOlt7ImV2ZW50VHlwZSI6IkNMSUNLIiwiZXZlbnRBY3Rpb25zIjp7InR5cGVBY3Rpb24iOm51bGwsInJlZGlyZWN0IjpudWxsLCJzaG93Ijp7ImRlc2NyaXB0aW9uIjoicmVjb3JkSWQgMDsgcmVzb3VyY2VJZCAxMjM0NTY7IHR5cGUgcmVjb3JkIn19fV19"/>
+    </a>
+    <a xlink:href="#">
+        <rect height="20" width="100" x="200" y="0" fill="Lime" id="rect1" class="zone"
+              data-data="eyJldmVudHMiOlt7ImV2ZW50VHlwZSI6IkNMSUNLIiwiZXZlbnRBY3Rpb25zIjp7InR5cGVBY3Rpb24iOm51bGwsInJlZGlyZWN0IjpudWxsLCJzaG93Ijp7ImRlc2NyaXB0aW9uIjoicmVjb3JkSWQgMTsgcmVzb3VyY2VJZCAxMjM0NTY7IHR5cGUgcmVjb3JkIn19fV19"/>
+    </a>
+    <a xlink:href="#">
+        <rect height="20" width="20" x="300" y="0" fill="red" id="rect2" class="zone"
+              data-data="eyJldmVudHMiOlt7ImV2ZW50VHlwZSI6IkNMSUNLIiwiZXZlbnRBY3Rpb25zIjp7InR5cGVBY3Rpb24iOm51bGwsInJlZGlyZWN0IjpudWxsLCJzaG93Ijp7ImRlc2NyaXB0aW9uIjoicmVjb3JkSWQgMjsgcmVzb3VyY2VJZCAxMjM0NTY7IHR5cGUgcmVjb3JkIn19fV19"/>
+    </a>
+    <a xlink:href="#">
+        <rect height="20" width="100" x="320" y="0" fill="Lime" id="rect3" class="zone"
+              data-data="eyJldmVudHMiOlt7ImV2ZW50VHlwZSI6IkNMSUNLIiwiZXZlbnRBY3Rpb25zIjp7InR5cGVBY3Rpb24iOm51bGwsInJlZGlyZWN0IjpudWxsLCJzaG93Ijp7ImRlc2NyaXB0aW9uIjoicmVjb3JkSWQgMzsgcmVzb3VyY2VJZCAxMjM0NTY7IHR5cGUgcmVjb3JkIn19fV19"/>
+    </a>
+    <a xlink:href="#">
+        <rect height="20" width="20" x="420" y="0" fill="red" id="rect4" class="zone"
+              data-data="eyJldmVudHMiOlt7ImV2ZW50VHlwZSI6IkNMSUNLIiwiZXZlbnRBY3Rpb25zIjp7InR5cGVBY3Rpb24iOm51bGwsInJlZGlyZWN0IjpudWxsLCJzaG93Ijp7ImRlc2NyaXB0aW9uIjoicmVjb3JkSWQgNDsgcmVzb3VyY2VJZCAxMjM0NTY7IHR5cGUgcmVjb3JkIn19fV19"/>
+    </a>
+    <a xlink:href="#">
+        <rect height="20" width="200" x="440" y="0" fill="Lime" id="rect5" class="zone"
+              data-data="eyJldmVudHMiOlt7ImV2ZW50VHlwZSI6IkNMSUNLIiwiZXZlbnRBY3Rpb25zIjp7InR5cGVBY3Rpb24iOm51bGwsInJlZGlyZWN0IjpudWxsLCJzaG93Ijp7ImRlc2NyaXB0aW9uIjoicmVjb3JkSWQgNTsgcmVzb3VyY2VJZCAxMjM0NTY7IHR5cGUgcmVjb3JkIn19fV19"/>
+    </a>
+    <a xlink:href="#">
+        <rect height="20" width="200" x="640" y="0" fill="yellow" id="rect6" class="zone"
+              data-data="eyJldmVudHMiOlt7ImV2ZW50VHlwZSI6IkNMSUNLIiwiZXZlbnRBY3Rpb25zIjp7InR5cGVBY3Rpb24iOm51bGwsInJlZGlyZWN0IjpudWxsLCJzaG93Ijp7ImRlc2NyaXB0aW9uIjoicmVjb3JkSWQgNjsgcmVzb3VyY2VJZCAxMjM0NTY7IHR5cGUgcmVjb3JkIn19fV19"/>
+    </a>
+</svg>
