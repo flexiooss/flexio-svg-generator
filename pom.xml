@@ -40,7 +40,7 @@
             </dependency>
             <dependency>
                 <groupId>io.flexio.apis</groupId>
-                <artifactId>flexio-apis</artifactId>
+                <artifactId>flexio-dashboard-api-types</artifactId>
                 <version>1.1.0</version>
                 <scope>import</scope>
                 <type>pom</type>
