@@ -9,4 +9,9 @@ public class Text extends Attributes {
         attributes("y", position.y());
         return this;
     }
+
+    public Text anchor(String anchor) {
+        attributes("text-anchor", anchor);
+        return this;
+    }
 }

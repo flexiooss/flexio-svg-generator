@@ -1,15 +1,24 @@
 package TRS;
 
 import ElementWriter.SvgWriter;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import generator.element.Link;
 import generator.element.Rectangle;
 import generator.element.Svg;
 import generator.type.Point;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.flexio.apis.dashboards.svg.embedded.Action;
+import io.flexio.apis.dashboards.svg.embedded.Event;
+import io.flexio.apis.dashboards.svg.embedded.EventsSpec;
+import io.flexio.apis.dashboards.svg.embedded.Show;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Base64;
 
 
 public class TRSGeneration {
@@ -49,12 +58,22 @@ public class TRSGeneration {
 
     private void setRange(Data data, int i) throws IOException {
         String HEIGHT = "20";
-        DataSet dataSet = DataSet.builder()
-                .event("click")
-                .recordId(String.valueOf(i))
-                .resourceId("123456")
-                .type("record")
-                .build();
+
+        EventsSpec eventsSpec = EventsSpec.builder().events(
+                Event.builder().eventType(Event.EventType.CLICK)
+                        .action(Action.builder()
+                                .show(Show.builder().description("recordId " + i + "; resourceId 123456; type record").build()).build()).build()
+        ).build();
+
+        String json = "";
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+        try {
+            json = mapper.writeValueAsString(eventsSpec);
+            System.out.println(json);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
 
         Rectangle rect = new Rectangle()
                 .height(HEIGHT)
@@ -63,7 +82,8 @@ public class TRSGeneration {
         rect.fill(data.color());
         rect.id("rect" + i);
         rect.classSelector("zone");
-        dataSet.to(rect);
+        rect.attributes("data-data", new String(Base64.getEncoder().encode(json.getBytes())));
+
 
 
         writer.open("a", new Link().href("#"));
