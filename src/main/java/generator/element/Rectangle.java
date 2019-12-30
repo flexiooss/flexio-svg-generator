@@ -9,9 +9,17 @@ import generator.type.Rayon;
 import generator.Attributes;
 
 public class Rectangle extends Attributes implements Fillable, Strokable, StrokeWidthable {
+    public Rectangle width(long width) {
+        return this.width(Long.toString(width));
+    }
+
     public Rectangle width(String width) {
         attributes("width", String.valueOf(width));
         return this;
+    }
+
+    public Rectangle height(long height) {
+        return this.height(Long.toString(height));
     }
 
     public Rectangle height(String height) {

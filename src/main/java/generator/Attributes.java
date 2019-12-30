@@ -4,6 +4,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public abstract class Attributes implements Attribute {
+    static public Attributes EMPTY = new Attributes() {};
+
     private Map<String, String> attributes = new LinkedHashMap<>();
 
     public Attribute attributes(String name, String value) {
