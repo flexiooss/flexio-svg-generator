@@ -1,16 +1,15 @@
 package TRS;
 
-import ElementWriter.SvgWriter;
-import generator.element.Link;
-import generator.element.Rectangle;
-import generator.element.Svg;
-import generator.type.Point;
+import generator.writer.SvgWriter;
+import generator.tag.element.Link;
+import generator.tag.element.Rectangle;
+import generator.tag.element.Svg;
+import generator.tag.type.Point;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Base64;
 
 
 public class TRSGeneration {

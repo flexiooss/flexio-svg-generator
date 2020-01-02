@@ -1,9 +1,9 @@
-package generator.element;
+package generator.tag.element;
 
 import generator.Attributes;
-import generator.basics.Fillable;
-import generator.basics.Strokable;
-import generator.basics.StrokeWidthable;
+import generator.tag.property.Fillable;
+import generator.tag.property.Strokable;
+import generator.tag.property.StrokeWidthable;
 
 public class Path extends Attributes implements Fillable, Strokable, StrokeWidthable {
     public Path path(String d) {

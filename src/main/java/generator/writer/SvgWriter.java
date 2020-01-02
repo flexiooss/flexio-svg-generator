@@ -1,9 +1,8 @@
-package ElementWriter;
+package generator.writer;
 
 import generator.Attribute;
 
 import java.io.*;
-import java.util.Map;
 
 public class SvgWriter implements ElementWriter {
     private PrintWriter outputStream;

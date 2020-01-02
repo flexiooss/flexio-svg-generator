@@ -1,10 +1,10 @@
-package generator.element;
+package generator.tag.element;
 
-import generator.basics.Fillable;
-import generator.basics.Strokable;
-import generator.basics.StrokeWidthable;
-import generator.type.Point;
-import generator.type.Rayon;
+import generator.tag.property.Fillable;
+import generator.tag.property.Strokable;
+import generator.tag.property.StrokeWidthable;
+import generator.tag.type.Point;
+import generator.tag.type.Radius;
 
 import generator.Attributes;
 
@@ -27,9 +27,9 @@ public class Rectangle extends Attributes implements Fillable, Strokable, Stroke
         return this;
     }
 
-    public Rectangle rounded(Rayon rayon) {
-        attributes("rx", rayon.x());
-        attributes("ry", rayon.y());
+    public Rectangle rounded(Radius radius) {
+        attributes("rx", radius.x());
+        attributes("ry", radius.y());
         return this;
     }
 

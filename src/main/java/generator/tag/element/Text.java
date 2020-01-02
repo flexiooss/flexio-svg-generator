@@ -1,7 +1,7 @@
-package generator.element;
+package generator.tag.element;
 
 import generator.Attributes;
-import generator.type.Point;
+import generator.tag.type.Point;
 
 public class Text extends Attributes {
     public enum Anchor {

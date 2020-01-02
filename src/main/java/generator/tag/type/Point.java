@@ -1,4 +1,4 @@
-package generator.type;
+package generator.tag.type;
 
 import java.util.Objects;
 

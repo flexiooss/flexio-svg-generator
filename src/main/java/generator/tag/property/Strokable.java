@@ -1,4 +1,4 @@
-package generator.basics;
+package generator.tag.property;
 
 import generator.Attribute;
 

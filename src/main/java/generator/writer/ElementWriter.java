@@ -1,10 +1,7 @@
-package ElementWriter;
+package generator.writer;
 
 import generator.Attribute;
 import generator.Attributes;
-
-import java.io.IOException;
-import java.util.function.Supplier;
 
 public interface ElementWriter {
     void open(String name, Attribute attributes);

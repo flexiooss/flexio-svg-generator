@@ -1,10 +1,9 @@
-package generator.element;
+package generator.tag.element;
 
-import generator.Attribute;
-import generator.basics.Fillable;
-import generator.basics.Strokable;
-import generator.basics.StrokeWidthable;
-import generator.type.Point;
+import generator.tag.property.Fillable;
+import generator.tag.property.Strokable;
+import generator.tag.property.StrokeWidthable;
+import generator.tag.type.Point;
 import generator.Attributes;
 
 public class Circle extends Attributes implements Fillable, Strokable, StrokeWidthable {
