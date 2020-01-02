@@ -1,10 +1,10 @@
 package TRS;
 
-import generator.writer.SvgWriter;
-import generator.tag.element.Link;
-import generator.tag.element.Rectangle;
-import generator.tag.element.Svg;
-import generator.tag.type.Point;
+import io.flexio.svg.generator.generator.writer.SvgWriter;
+import io.flexio.svg.generator.generator.tag.element.Link;
+import io.flexio.svg.generator.generator.tag.element.Rectangle;
+import io.flexio.svg.generator.generator.tag.element.Svg;
+import io.flexio.svg.generator.generator.tag.type.Point;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,1 +1,1 @@
-# flexio-svg-generator
+# flexio-svg-io.flexio.svg.generator.generator

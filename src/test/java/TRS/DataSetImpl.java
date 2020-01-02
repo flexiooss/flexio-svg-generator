@@ -1,6 +1,6 @@
 package TRS;
 
-import generator.Attribute;
+import io.flexio.svg.generator.generator.Attribute;
 
 public class DataSetImpl implements DataSet {
     private String event;
