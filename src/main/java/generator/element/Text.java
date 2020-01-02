@@ -19,6 +19,16 @@ public class Text extends Attributes {
         return this;
     }
 
+    public Text fontFamily(String value) {
+        attributes("font-family", value);
+        return this;
+    }
+
+    public Text fontSize(String value) {
+        attributes("font-size", value);
+        return this;
+    }
+
     public Text anchor(Anchor anchor) {
         return this.anchor(anchor.name());
     }
