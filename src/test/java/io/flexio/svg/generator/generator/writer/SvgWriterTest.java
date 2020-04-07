@@ -1,6 +1,6 @@
-package ElementWriter;
+package io.flexio.svg.generator.generator.writer;
 
-import generator.Attribute;
+import io.flexio.svg.generator.generator.Attribute;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,21 +15,20 @@ public class SvgWriterTest {
 
     private SvgWriter writer;
     private Attribute attributes;
-    private PrintWriter printer;
     private StringWriter stringWriter;
 
     @Before
-    public void setup() throws FileNotFoundException {
+    public void setup() {
         attributes = new Attribute() {
             @Override
             public Map<String, String> attributes() {
-                HashMap map =  new HashMap<>();
+                Map<String, String> map =  new HashMap<>();
                 map.put("attribute", "value");
                 return map;
             }
         };
         stringWriter = new StringWriter();
-        printer = new PrintWriter(stringWriter);
+        PrintWriter printer = new PrintWriter(stringWriter);
         writer = new SvgWriter(printer);
     }
 
@@ -55,5 +54,11 @@ public class SvgWriterTest {
     public void writerCloseTest() throws FileNotFoundException {
         writer.close("tag");
         Assert.assertEquals(stringWriter.toString(), "</tag>");
+    }
+
+    @Test
+    public void writerAutoCloseEmptyTest() throws FileNotFoundException {
+        writer.autoClosed("tag");
+        Assert.assertEquals(stringWriter.toString(), "<tag/>");
     }
 }

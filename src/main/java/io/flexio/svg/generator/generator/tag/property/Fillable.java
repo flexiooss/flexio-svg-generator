@@ -1,6 +1,6 @@
-package generator.basics;
+package io.flexio.svg.generator.generator.tag.property;
 
-import generator.Attribute;
+import io.flexio.svg.generator.generator.Attribute;
 
 public interface Fillable extends Attribute {
     default Fillable fill(String fill) {

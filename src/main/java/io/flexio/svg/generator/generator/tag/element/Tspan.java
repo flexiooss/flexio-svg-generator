@@ -1,7 +1,7 @@
-package generator.element;
+package io.flexio.svg.generator.generator.tag.element;
 
-import generator.Attributes;
-import generator.type.Point;
+import io.flexio.svg.generator.generator.Attributes;
+import io.flexio.svg.generator.generator.tag.type.Point;
 
 
 public class Tspan extends Attributes {

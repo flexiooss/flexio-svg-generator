@@ -1,6 +1,5 @@
-package generator;
+package io.flexio.svg.generator.generator;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public interface Attribute {

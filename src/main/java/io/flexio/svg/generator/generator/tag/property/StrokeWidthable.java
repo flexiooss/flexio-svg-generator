@@ -1,6 +1,6 @@
-package generator.basics;
+package io.flexio.svg.generator.generator.tag.property;
 
-import generator.Attribute;
+import io.flexio.svg.generator.generator.Attribute;
 
 public interface StrokeWidthable extends Attribute {
     default StrokeWidthable strokeWidth(String strokeWidth) {

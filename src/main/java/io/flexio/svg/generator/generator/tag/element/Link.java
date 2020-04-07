@@ -1,6 +1,6 @@
-package generator.element;
+package io.flexio.svg.generator.generator.tag.element;
 
-import generator.Attributes;
+import io.flexio.svg.generator.generator.Attributes;
 
 public class Link extends Attributes {
     public Link href(String href) {
