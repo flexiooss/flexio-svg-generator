@@ -1,17 +1,12 @@
 package io.flexio.svg.generator.generator.tag.element;
 
 import io.flexio.svg.generator.generator.Attributes;
+import io.flexio.svg.generator.generator.tag.property.Positionable;
 import io.flexio.svg.generator.generator.tag.type.Point;
 
-public class Text extends Attributes {
+public class Text extends Attributes<Text> implements Positionable<Text> {
     public enum Anchor {
         middle, end, start
-    }
-
-    public Text position(Point position) {
-        attributes("x", position.x());
-        attributes("y", position.y());
-        return this;
     }
 
     public Text anchor(String anchor) {

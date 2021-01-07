@@ -1,6 +1,7 @@
 package io.flexio.svg.generator.generator.writer;
 
 import io.flexio.svg.generator.generator.Attribute;
+import io.flexio.svg.generator.generator.Attributes;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -4,13 +4,14 @@ import java.util.Base64;
 import java.util.Map;
 
 public interface Attribute {
+    Map<String, String> attributes();
+
     default Attribute attributes(String name, String value) {
         attributes().put(name, value);
         return this;
     }
-    Map<String, String> attributes();
 
-    default Attribute embed(String property, String data){
+    default Attribute embed(String property, String data) {
         if(property == null || property.trim().isEmpty() || data == null){
             return this;
         }

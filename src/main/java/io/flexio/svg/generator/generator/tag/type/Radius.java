@@ -1,13 +1,18 @@
 package io.flexio.svg.generator.generator.tag.type;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Radius {
     String x;
     String y;
 
-    public Radius(long x, long y) {
-        this(Long.toString(x), Long.toString(y));
+    public Radius(BigDecimal x, BigDecimal y) {
+        this(x.toPlainString(), y.toPlainString());
+    }
+
+    public Radius(double x, double y) {
+        this(String.valueOf(x), String.valueOf(y));
     }
 
     public Radius(String x, String y) {

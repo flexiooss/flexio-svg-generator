@@ -1,13 +1,12 @@
 package io.flexio.svg.generator.generator.tag.element;
 
-
 import io.flexio.svg.generator.generator.tag.property.Fillable;
 import io.flexio.svg.generator.generator.tag.property.Strokable;
 import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
 import io.flexio.svg.generator.generator.tag.type.Point;
 import io.flexio.svg.generator.generator.Attributes;
 
-public class Line extends Attributes implements Fillable, Strokable, StrokeWidthable {
+public class Line extends Attributes<Line> implements Fillable<Line>, Strokable<Line>, StrokeWidthable<Line> {
     public Line positionStart(Point position) {
         attributes("x1", position.x());
         attributes("y1", position.y());
