@@ -7,12 +7,22 @@ import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
 import io.flexio.svg.generator.generator.tag.type.Point;
 import io.flexio.svg.generator.generator.Attributes;
 
+import java.math.BigDecimal;
+
 public class Circle extends Attributes<Circle> implements Fillable<Circle>, Strokable<Circle>,
         StrokeWidthable<Circle>, Positionable<Circle> {
 
     public Circle radius(String radius) {
         attributes("r", radius);
         return this;
+    }
+
+    public Circle radius(double radius) {
+        return this.radius(String.valueOf(radius));
+    }
+
+    public Circle radius(BigDecimal radius) {
+        return this.radius(radius.toPlainString());
     }
 
     @Override
