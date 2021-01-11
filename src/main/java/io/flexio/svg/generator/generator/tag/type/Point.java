@@ -1,13 +1,18 @@
 package io.flexio.svg.generator.generator.tag.type;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Point {
     String x;
     String y;
 
-    public Point(long x, long y) {
-        this(Long.toString(x), Long.toString(y));
+    public Point(BigDecimal x, BigDecimal y) {
+        this(x.toPlainString(), y.toPlainString());
+    }
+
+    public Point(double x, double y) {
+        this(String.valueOf(x), String.valueOf(y));
     }
 
     public Point(String x, String y) {

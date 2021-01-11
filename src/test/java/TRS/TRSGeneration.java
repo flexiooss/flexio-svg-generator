@@ -50,7 +50,6 @@ public class TRSGeneration {
     private void setRange(Data data, int i) throws IOException {
         String HEIGHT = "20";
 
-
         Rectangle rect = new Rectangle()
                 .height(HEIGHT)
                 .width(String.valueOf(data.width()))
@@ -58,8 +57,6 @@ public class TRSGeneration {
         rect.fill(data.color());
         rect.id("rect" + i);
         rect.classSelector("zone");
-
-
 
         writer.open("a", new Link().href("#"));
         writer.autoClosed("rect", rect);

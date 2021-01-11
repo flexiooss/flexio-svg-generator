@@ -1,29 +1,41 @@
 package io.flexio.svg.generator.generator;
 
+import java.util.Base64;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public abstract class Attributes implements Attribute {
+public abstract class Attributes<C extends Attribute> implements Attribute {
     static public Attributes EMPTY = new Attributes() {};
 
-    private Map<String, String> attributes = new LinkedHashMap<>();
+    private final Map<String, String> attributes = new LinkedHashMap<>();
 
-    public Attribute attributes(String name, String value) {
-        attributes.put(name, value);
-        return this;
+    @Override
+    public final C attributes(String name, String value) {
+        attributes().put(name, value);
+        return (C) this;
     }
 
-    public Map<String, String> attributes() {
+    @Override
+    public final Map<String, String> attributes() {
         return attributes;
     }
 
-    public Attribute id(String id) {
-        attributes("id", id);
-        return this;
+    @Override
+    public final C embed(String property, String data) {
+        if(property == null || property.trim().isEmpty() || data == null){
+            return (C) this;
+        }
+        attributes().put(property, Attribute.encodeBase64(data));
+        return (C) this;
     }
 
-    public Attribute classSelector(String classSelector) {
+    public C id(String id) {
+        attributes("id", id);
+        return (C) this;
+    }
+
+    public C classSelector(String classSelector) {
         attributes("class", classSelector);
-        return this;
+        return (C) this;
     }
 }

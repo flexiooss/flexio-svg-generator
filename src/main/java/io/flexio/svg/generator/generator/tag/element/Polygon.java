@@ -6,7 +6,7 @@ import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
 
 import io.flexio.svg.generator.generator.Attributes;
 
-public class Polygon extends Attributes implements Fillable, Strokable, StrokeWidthable {
+public class Polygon extends Attributes<Polygon> implements Fillable<Polygon>, Strokable<Polygon>, StrokeWidthable<Polygon> {
     public Polygon points(String points) {
         attributes("points", points);
         return this;

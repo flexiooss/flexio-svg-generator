@@ -5,7 +5,7 @@ import io.flexio.svg.generator.generator.tag.property.Fillable;
 import io.flexio.svg.generator.generator.tag.property.Strokable;
 import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
 
-public class Path extends Attributes implements Fillable, Strokable, StrokeWidthable {
+public class Path extends Attributes<Path> implements Fillable<Path>, Strokable<Path>, StrokeWidthable<Path> {
     public Path path(String d) {
         attributes("d", d);
         return this;
