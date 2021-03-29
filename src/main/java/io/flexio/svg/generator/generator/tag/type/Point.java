@@ -12,7 +12,7 @@ public class Point {
     }
 
     public Point(double x, double y) {
-        this(String.valueOf(x), String.valueOf(y));
+        this(String.format("%.5f", x), String.format("%.5f", y));
     }
 
     public Point(String x, String y) {

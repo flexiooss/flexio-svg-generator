@@ -7,4 +7,8 @@ public interface Fillable<C extends Fillable> extends Attribute {
         attributes("fill", fill);
         return (C) this;
     }
+
+    default C fill(String format, Object... args) {
+        return this.fill(String.format(format, args));
+    }
 }
