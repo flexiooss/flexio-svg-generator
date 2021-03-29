@@ -3,26 +3,31 @@ package io.flexio.svg.generator.generator.tag.property;
 import io.flexio.svg.generator.generator.Attribute;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 
-public interface StrokeWidthable<C extends StrokeWidthable> extends Attribute {
-    default C strokeWidth(String strokeWidth) {
+public interface StrokeWidthable<S extends StrokeWidthable> extends Attribute {
+    default S strokeWidth(String strokeWidth) {
         attributes("stroke-width", strokeWidth);
-        return (C) this;
+        return (S) this;
+    }
+    
+    default S strokeWidth(String format, Object... args) {
+        return this.strokeWidth(String.format(Locale.US, format, args));
     }
 
-    default C strokeWidth(double strokeWidth) {
-        return this.strokeWidth(String.valueOf(strokeWidth));
+    default S strokeWidth(double strokeWidth) {
+        return this.strokeWidth(String.format(Locale.US, "%.5f",strokeWidth));
     }
 
-    default C strokeWidth(BigDecimal strokeWidth) {
+    default S strokeWidth(BigDecimal strokeWidth) {
         return this.strokeWidth(strokeWidth.toPlainString());
     }
 
-    default C strokeWidthPercent(double strokeWidth) {
-        return this.strokeWidth(String.valueOf(strokeWidth) + '%');
+    default S strokeWidthPercent(double strokeWidth) {
+        return this.strokeWidth(String.format(Locale.US, "%.5f",strokeWidth) + '%');
     }
 
-    default C strokeWidthPercent(BigDecimal strokeWidth) {
+    default S strokeWidthPercent(BigDecimal strokeWidth) {
         return this.strokeWidth(strokeWidth.toPlainString() + '%');
     }
 }

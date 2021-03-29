@@ -1,20 +1,21 @@
 package io.flexio.svg.generator.generator.tag.element;
 
-import io.flexio.svg.generator.generator.Attributes;
-import io.flexio.svg.generator.generator.tag.property.Fillable;
-import io.flexio.svg.generator.generator.tag.property.Positionable;
-import io.flexio.svg.generator.generator.tag.property.Strokable;
-import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
+import io.flexio.svg.generator.generator.Attribute;
+import io.flexio.svg.generator.generator.Element;
+import io.flexio.svg.generator.generator.SVGElementAttributes;
+import io.flexio.svg.generator.generator.tag.property.*;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 
-public class Text extends Attributes<Text> implements Positionable<Text>, Fillable<Text>, Strokable<Text>, StrokeWidthable<Text> {
-    public enum Anchor {
-        middle, end, start
+public class Text extends SVGElementAttributes<Text> implements Element, Positionable<Text>, Fillable<Text>, Strokable<Text>, StrokeWidthable<Text>, Rotatable<Text> {
+    @Override
+    public String name() {
+        return "text";
     }
 
-    public Text anchor(String anchor) {
-        attributes("text-anchor", anchor);
+    @Override
+    public Attribute attribute() {
         return this;
     }
 
@@ -29,7 +30,7 @@ public class Text extends Attributes<Text> implements Positionable<Text>, Fillab
     }
 
     public Text fontSize(double value) {
-        return this.fontSize(String.valueOf(value));
+        return this.fontSize(String.format(Locale.US, "%.5f", value));
     }
 
     public Text fontSize(BigDecimal value) {
@@ -38,6 +39,15 @@ public class Text extends Attributes<Text> implements Positionable<Text>, Fillab
 
     public Text fontWeight(String weight) {
         attributes("font-weight", weight);
+        return this;
+    }
+
+    public enum Anchor {
+        middle, end, start
+    }
+
+    public Text anchor(String anchor) {
+        attributes("text-anchor", anchor);
         return this;
     }
 

@@ -1,16 +1,28 @@
 package io.flexio.svg.generator.generator.tag.element;
 
+import io.flexio.svg.generator.generator.Attribute;
+import io.flexio.svg.generator.generator.Element;
+import io.flexio.svg.generator.generator.SVGElementAttributes;
 import io.flexio.svg.generator.generator.tag.property.Fillable;
 import io.flexio.svg.generator.generator.tag.property.Positionable;
 import io.flexio.svg.generator.generator.tag.property.Strokable;
 import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
 import io.flexio.svg.generator.generator.tag.type.Point;
-import io.flexio.svg.generator.generator.Attributes;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 
-public class Circle extends Attributes<Circle> implements Fillable<Circle>, Strokable<Circle>,
+public class Circle extends SVGElementAttributes<Circle> implements Element, Fillable<Circle>, Strokable<Circle>,
         StrokeWidthable<Circle>, Positionable<Circle> {
+    @Override
+    public String name() {
+        return "circle";
+    }
+
+    @Override
+    public Attribute attribute() {
+        return this;
+    }
 
     public Circle radius(String radius) {
         attributes("r", radius);
@@ -18,7 +30,7 @@ public class Circle extends Attributes<Circle> implements Fillable<Circle>, Stro
     }
 
     public Circle radius(double radius) {
-        return this.radius(String.valueOf(radius));
+        return this.radius(String.format(Locale.US, "%.5f",radius));
     }
 
     public Circle radius(BigDecimal radius) {
