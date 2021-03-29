@@ -6,6 +6,7 @@ import io.flexio.svg.generator.generator.SVGElementAttributes;
 import io.flexio.svg.generator.generator.tag.property.*;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 
 public class Text extends SVGElementAttributes<Text> implements Element, Positionable<Text>, Fillable<Text>, Strokable<Text>, StrokeWidthable<Text>, Rotatable<Text> {
     @Override
@@ -29,7 +30,7 @@ public class Text extends SVGElementAttributes<Text> implements Element, Positio
     }
 
     public Text fontSize(double value) {
-        return this.fontSize(String.format("%.5f", value));
+        return this.fontSize(String.format(Locale.US, "%.5f", value));
     }
 
     public Text fontSize(BigDecimal value) {

@@ -1,6 +1,7 @@
 package io.flexio.svg.generator.generator.tag.type;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Point {
@@ -12,7 +13,7 @@ public class Point {
     }
 
     public Point(double x, double y) {
-        this(String.format("%.5f", x), String.format("%.5f", y));
+        this(String.format(Locale.US, "%.5f", x), String.format(Locale.US, "%.5f", y));
     }
 
     public Point(String x, String y) {

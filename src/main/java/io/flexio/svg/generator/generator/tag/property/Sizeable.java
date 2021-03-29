@@ -3,10 +3,11 @@ package io.flexio.svg.generator.generator.tag.property;
 import io.flexio.svg.generator.generator.Attribute;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 
 public interface Sizeable<S extends Sizeable> extends Attribute {
     default S width(double width) {
-        return this.width(String.valueOf(width));
+        return this.width(String.format(Locale.US, "%.5f",width));
     }
 
     default S width(BigDecimal width) {
@@ -24,7 +25,7 @@ public interface Sizeable<S extends Sizeable> extends Attribute {
 
 
     default S height(double height) {
-        return this.height(String.valueOf(height));
+        return this.height(String.format(Locale.US, "%.5f",height));
     }
 
     default S height(BigDecimal height) {

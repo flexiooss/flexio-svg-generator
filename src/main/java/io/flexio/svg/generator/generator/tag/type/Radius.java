@@ -1,6 +1,7 @@
 package io.flexio.svg.generator.generator.tag.type;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Radius {
@@ -12,7 +13,7 @@ public class Radius {
     }
 
     public Radius(double x, double y) {
-        this(String.valueOf(x), String.valueOf(y));
+        this(String.format(Locale.US, "%.5f", x), String.format(Locale.US, "%.5f", y));
     }
 
     public Radius(String x, String y) {
