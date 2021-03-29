@@ -5,8 +5,8 @@ import io.flexio.svg.generator.generator.Attribute;
 import java.util.Locale;
 
 public interface Identifiable<I extends Identifiable> extends Attribute {
-    default I id(String fill) {
-        attributes("fill", fill);
+    default I id(String id) {
+        attributes("id", id);
         return (I) this;
     }
 

@@ -9,7 +9,7 @@ public interface Classifiable<C extends Classifiable> extends Attribute {
 
     default C classSelector(String... classSelectors) {
         if (classSelectors.length > 0) {
-            if (attributes().containsKey(CLASS)) {
+            if (! attributes().containsKey(CLASS)) {
                 attributes(CLASS, String.join(" ", classSelectors));
             } else {
                 attributes().computeIfPresent(CLASS, (k, v) -> v + ' ' + String.join(" ", classSelectors));
