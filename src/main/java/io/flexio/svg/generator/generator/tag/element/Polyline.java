@@ -7,6 +7,8 @@ import io.flexio.svg.generator.generator.tag.property.Fillable;
 import io.flexio.svg.generator.generator.tag.property.Strokable;
 import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
 
+import java.util.Locale;
+
 public class Polyline extends SVGElementAttributes<Polyline> implements Element, Fillable<Polyline>, Strokable<Polyline>, StrokeWidthable<Polyline> {
     @Override
     public String name() {
@@ -24,6 +26,6 @@ public class Polyline extends SVGElementAttributes<Polyline> implements Element,
     }
 
     public Polyline points(String format, Object... args) {
-        return this.points(String.format(format, args));
+        return this.points(String.format(Locale.US, format, args));
     }
 }

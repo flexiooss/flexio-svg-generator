@@ -6,6 +6,8 @@ import io.flexio.svg.generator.generator.SVGElementAttributes;
 import io.flexio.svg.generator.generator.tag.property.Positionable;
 import io.flexio.svg.generator.generator.tag.property.Sizeable;
 
+import java.util.Locale;
+
 public class Svg extends SVGElementAttributes<Svg> implements Element, Sizeable<Svg>, Positionable<Svg> {
     @Override
     public String name() {
@@ -33,6 +35,6 @@ public class Svg extends SVGElementAttributes<Svg> implements Element, Sizeable<
     }
 
     public Svg viewBox(String format, Object... args) {
-        return this.viewBox(String.format(format, args));
+        return this.viewBox(String.format(Locale.US, format, args));
     }
 }

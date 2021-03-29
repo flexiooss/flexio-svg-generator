@@ -20,7 +20,7 @@ public interface Sizeable<S extends Sizeable> extends Attribute {
     }
 
     default S width(String format, Object... args) {
-        return this.width(String.format(format, args));
+        return this.width(String.format(Locale.US, format, args));
     }
 
 
@@ -38,6 +38,6 @@ public interface Sizeable<S extends Sizeable> extends Attribute {
     }
 
     default S height(String format, Object... args) {
-        return this.height(String.format(format, args));
+        return this.height(String.format(Locale.US, format, args));
     }
 }

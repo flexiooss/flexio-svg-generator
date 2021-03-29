@@ -12,7 +12,7 @@ public interface StrokeWidthable<S extends StrokeWidthable> extends Attribute {
     }
     
     default S strokeWidth(String format, Object... args) {
-        return this.strokeWidth(String.format(format, args));
+        return this.strokeWidth(String.format(Locale.US, format, args));
     }
 
     default S strokeWidth(double strokeWidth) {

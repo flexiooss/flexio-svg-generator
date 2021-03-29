@@ -2,6 +2,8 @@ package io.flexio.svg.generator.generator.tag.property;
 
 import io.flexio.svg.generator.generator.Attribute;
 
+import java.util.Locale;
+
 public interface Classifiable<C extends Classifiable> extends Attribute {
     String CLASS = "class";
 
@@ -17,6 +19,6 @@ public interface Classifiable<C extends Classifiable> extends Attribute {
     }
 
     default C classSelector(String format, Object... args) {
-        return this.classSelector(String.format(format, args));
+        return this.classSelector(String.format(Locale.US, format, args));
     }
 }
