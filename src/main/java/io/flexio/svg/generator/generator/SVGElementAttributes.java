@@ -7,12 +7,11 @@ import io.flexio.svg.generator.generator.tag.property.Stylable;
 import java.util.Base64;
 
 public abstract class SVGElementAttributes<A extends SVGElementAttributes> extends Attributes<A> implements Identifiable<A>, Classifiable<A>, Stylable<A> {
-    public final Attribute embed(String property, String data) {
-        if (property == null || property.trim().isEmpty() || data == null) {
-            return this;
+    public final A embed(String property, String data) {
+        if (property != null && ! property.trim().isEmpty() && data != null) {
+            attributes().put(property, encodeBase64(data));
         }
-        attributes().put(property, encodeBase64(data));
-        return this;
+        return (A) this;
     }
 
     private String encodeBase64(String data){
