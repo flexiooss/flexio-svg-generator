@@ -9,7 +9,10 @@ import io.flexio.svg.generator.generator.writer.ElementWriter;
 import java.math.BigDecimal;
 import java.util.Locale;
 
-public class Text extends SVGElementAttribute<Text> implements Element, Positionable<Text>, Fillable<Text>, Strokable<Text>, StrokeWidthHolder<Text>, Rotatable<Text> {
+public class Text extends SVGElementAttribute<Text> implements Element,
+        Positionable<Text>, Fillable<Text>, Strokable<Text>, StrokeWidthHolder<Text>, Rotatable<Text>, ClipPathHolder<Text>,
+        OpacityHolder<Text>
+{
     private static final String text = "text";
     @Override
     public String name() {

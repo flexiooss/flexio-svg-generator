@@ -7,8 +7,9 @@ import io.flexio.svg.generator.generator.tag.property.*;
 import io.flexio.svg.generator.generator.tag.type.Radius;
 import io.flexio.svg.generator.generator.writer.ElementWriter;
 
-public class Rectangle extends SVGElementAttribute<Rectangle> implements Element, Fillable<Rectangle>, Strokable<Rectangle>,
-        StrokeWidthHolder<Rectangle>, PathLengthHolder<Rectangle>, Positionable<Rectangle>, Sizeable<Rectangle>
+public class Rectangle extends SVGElementAttribute<Rectangle> implements Element,
+        Fillable<Rectangle>, Strokable<Rectangle>, StrokeWidthHolder<Rectangle>, PathLengthHolder<Rectangle>,
+        Positionable<Rectangle>, Sizeable<Rectangle>, ClipPathHolder<Rectangle>, OpacityHolder<Rectangle>
 {
     private static final String rectangle = "rect";
     @Override

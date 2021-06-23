@@ -7,7 +7,14 @@ import java.util.Locale;
 public interface Strokable<S extends Strokable> extends Attribute {
     @SuppressWarnings("unchecked")
     default S stroke(String stroke) {
-        attributes("stroke", stroke);
+        final String strokeProperty = "stroke", defaultValue = "none";
+
+        if (stroke.equals(defaultValue)) {
+            attributes().remove(strokeProperty);
+        } else {
+            attributes(strokeProperty, stroke);
+        }
+
         return (S) this;
     }
 

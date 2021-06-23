@@ -3,13 +3,13 @@ package io.flexio.svg.generator.generator.tag.element;
 import io.flexio.svg.generator.generator.Attribute;
 import io.flexio.svg.generator.generator.Element;
 import io.flexio.svg.generator.generator.SVGElementAttribute;
-import io.flexio.svg.generator.generator.tag.property.Fillable;
-import io.flexio.svg.generator.generator.tag.property.Strokable;
-import io.flexio.svg.generator.generator.tag.property.StrokeWidthHolder;
+import io.flexio.svg.generator.generator.tag.property.*;
 import io.flexio.svg.generator.generator.tag.type.Point;
 import io.flexio.svg.generator.generator.writer.ElementWriter;
 
-public class Line extends SVGElementAttribute<Line> implements Element, Fillable<Line>, Strokable<Line>, StrokeWidthHolder<Line> {
+public class Line extends SVGElementAttribute<Line> implements Element,
+        Fillable<Line>, Strokable<Line>, StrokeWidthHolder<Line> , ClipPathHolder<Line>, OpacityHolder<Line>
+{
     private static final String line = "line";
     @Override
     public String name() {

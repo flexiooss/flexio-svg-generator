@@ -3,13 +3,17 @@ package io.flexio.svg.generator.generator.tag.element;
 import io.flexio.svg.generator.generator.Attribute;
 import io.flexio.svg.generator.generator.Element;
 import io.flexio.svg.generator.generator.SVGElementAttribute;
+import io.flexio.svg.generator.generator.tag.property.ClipPathHolder;
+import io.flexio.svg.generator.generator.tag.property.OpacityHolder;
 import io.flexio.svg.generator.generator.tag.property.Positionable;
 import io.flexio.svg.generator.generator.tag.property.Sizeable;
 import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 import java.util.Locale;
 
-public class Svg extends SVGElementAttribute<Svg> implements Element, Sizeable<Svg>, Positionable<Svg> {
+public class Svg extends SVGElementAttribute<Svg> implements Element,
+        Sizeable<Svg>, Positionable<Svg>, ClipPathHolder<Svg>, OpacityHolder<Svg>
+{
     private static final String svg = "svg";
     @Override
     public String name() {

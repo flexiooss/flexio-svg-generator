@@ -3,18 +3,17 @@ package io.flexio.svg.generator.generator.tag.element;
 import io.flexio.svg.generator.generator.Attribute;
 import io.flexio.svg.generator.generator.Element;
 import io.flexio.svg.generator.generator.SVGElementAttribute;
-import io.flexio.svg.generator.generator.tag.property.Fillable;
-import io.flexio.svg.generator.generator.tag.property.Positionable;
-import io.flexio.svg.generator.generator.tag.property.Strokable;
-import io.flexio.svg.generator.generator.tag.property.StrokeWidthHolder;
+import io.flexio.svg.generator.generator.tag.property.*;
 import io.flexio.svg.generator.generator.tag.type.Point;
 import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 import java.math.BigDecimal;
 import java.util.Locale;
 
-public class Circle extends SVGElementAttribute<Circle> implements Element, Fillable<Circle>, Strokable<Circle>,
-        StrokeWidthHolder<Circle>, Positionable<Circle> {
+public class Circle extends SVGElementAttribute<Circle> implements Element,
+        Fillable<Circle>, Strokable<Circle>, StrokeWidthHolder<Circle>, Positionable<Circle>, ClipPathHolder<Circle>,
+        OpacityHolder<Circle>
+{
     @Override
     public String name() {
         return "circle";

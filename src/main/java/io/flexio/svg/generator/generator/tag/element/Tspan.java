@@ -3,13 +3,17 @@ package io.flexio.svg.generator.generator.tag.element;
 import io.flexio.svg.generator.generator.Attribute;
 import io.flexio.svg.generator.generator.Element;
 import io.flexio.svg.generator.generator.SVGElementAttribute;
+import io.flexio.svg.generator.generator.tag.property.ClipPathHolder;
+import io.flexio.svg.generator.generator.tag.property.OpacityHolder;
 import io.flexio.svg.generator.generator.tag.property.Positionable;
 import io.flexio.svg.generator.generator.tag.property.Rotatable;
 import io.flexio.svg.generator.generator.tag.type.Point;
 import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 
-public class Tspan extends SVGElementAttribute<Tspan> implements Element, Positionable<Tspan>, Rotatable<Tspan> {
+public class Tspan extends SVGElementAttribute<Tspan> implements Element,
+        Positionable<Tspan>, Rotatable<Tspan>, ClipPathHolder<Tspan>, OpacityHolder<Tspan>
+{
     private static final String tspan = "tspan";
     @Override
     public String name() {

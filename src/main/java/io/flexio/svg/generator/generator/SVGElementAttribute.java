@@ -8,7 +8,7 @@ import io.flexio.svg.generator.generator.tag.property.Stylable;
 import java.util.Base64;
 
 public abstract class SVGElementAttribute<A extends SVGElementAttribute> extends Attributes<A> implements
-        Identifiable<A>, Classifiable<A>, Stylable<A>, ClipPathHolder<A>
+        Identifiable<A>, Classifiable<A>, Stylable<A>
 {
     @SuppressWarnings("unchecked")
     public final A embed(String property, String data) {

@@ -3,16 +3,14 @@ package io.flexio.svg.generator.generator.tag.element;
 import io.flexio.svg.generator.generator.Attribute;
 import io.flexio.svg.generator.generator.Element;
 import io.flexio.svg.generator.generator.SVGElementAttribute;
-import io.flexio.svg.generator.generator.tag.property.Fillable;
-import io.flexio.svg.generator.generator.tag.property.PathLengthHolder;
-import io.flexio.svg.generator.generator.tag.property.Strokable;
-import io.flexio.svg.generator.generator.tag.property.StrokeWidthHolder;
+import io.flexio.svg.generator.generator.tag.property.*;
 import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 import java.util.Locale;
 
 public class Polygon extends SVGElementAttribute<Polygon> implements Element,
-        Fillable<Polygon>, Strokable<Polygon>, StrokeWidthHolder<Polygon>, PathLengthHolder<Polygon>
+        Fillable<Polygon>, Strokable<Polygon>, StrokeWidthHolder<Polygon>, PathLengthHolder<Polygon>,
+        ClipPathHolder<Polygon>, OpacityHolder<Polygon>
 {
     private static final String polygon = "polygon";
     @Override
