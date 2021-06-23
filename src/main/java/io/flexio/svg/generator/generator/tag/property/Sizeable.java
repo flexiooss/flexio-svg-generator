@@ -6,14 +6,7 @@ import java.math.BigDecimal;
 import java.util.Locale;
 
 public interface Sizeable<S extends Sizeable> extends Attribute {
-    default S width(double width) {
-        return this.width(String.format(Locale.US, "%.5f",width));
-    }
-
-    default S width(BigDecimal width) {
-        return this.width(width.toPlainString());
-    }
-
+    @SuppressWarnings("unchecked")
     default S width(String width) {
         attributes("width", width);
         return (S) this;
@@ -23,15 +16,16 @@ public interface Sizeable<S extends Sizeable> extends Attribute {
         return this.width(String.format(Locale.US, format, args));
     }
 
-
-    default S height(double height) {
-        return this.height(String.format(Locale.US, "%.5f",height));
+    default S width(double width) {
+        return this.width("%.5f", width);
     }
 
-    default S height(BigDecimal height) {
-        return this.height(height.toPlainString());
+    default S width(BigDecimal width) {
+        return this.width(width.toPlainString());
     }
 
+
+    @SuppressWarnings("unchecked")
     default S height(String height) {
         attributes("height", height);
         return (S) this;
@@ -39,5 +33,13 @@ public interface Sizeable<S extends Sizeable> extends Attribute {
 
     default S height(String format, Object... args) {
         return this.height(String.format(Locale.US, format, args));
+    }
+
+    default S height(double height) {
+        return this.height("%.5f", height);
+    }
+
+    default S height(BigDecimal height) {
+        return this.height(height.toPlainString());
     }
 }

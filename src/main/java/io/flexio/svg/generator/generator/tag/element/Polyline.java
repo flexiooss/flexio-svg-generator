@@ -2,17 +2,19 @@ package io.flexio.svg.generator.generator.tag.element;
 
 import io.flexio.svg.generator.generator.Attribute;
 import io.flexio.svg.generator.generator.Element;
-import io.flexio.svg.generator.generator.SVGElementAttributes;
+import io.flexio.svg.generator.generator.SVGElementAttribute;
 import io.flexio.svg.generator.generator.tag.property.Fillable;
 import io.flexio.svg.generator.generator.tag.property.Strokable;
-import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
+import io.flexio.svg.generator.generator.tag.property.StrokeWidthHolder;
+import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 import java.util.Locale;
 
-public class Polyline extends SVGElementAttributes<Polyline> implements Element, Fillable<Polyline>, Strokable<Polyline>, StrokeWidthable<Polyline> {
+public class Polyline extends SVGElementAttribute<Polyline> implements Element, Fillable<Polyline>, Strokable<Polyline>, StrokeWidthHolder<Polyline> {
+    private static final String polyline = "polyline";
     @Override
     public String name() {
-        return "polyline";
+        return polyline;
     }
 
     @Override
@@ -27,5 +29,9 @@ public class Polyline extends SVGElementAttributes<Polyline> implements Element,
 
     public Polyline points(String format, Object... args) {
         return this.points(String.format(Locale.US, format, args));
+    }
+
+    public void autoClosed(ElementWriter writer) {
+        writer.autoClosed(this);
     }
 }

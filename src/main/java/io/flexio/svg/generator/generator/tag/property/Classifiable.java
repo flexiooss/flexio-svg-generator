@@ -7,13 +7,11 @@ import java.util.Locale;
 public interface Classifiable<C extends Classifiable> extends Attribute {
     String CLASS = "class";
 
+    @SuppressWarnings("unchecked")
     default C classSelector(String... classSelectors) {
         if (classSelectors.length > 0) {
-            if (! attributes().containsKey(CLASS)) {
-                attributes(CLASS, String.join(" ", classSelectors));
-            } else {
-                attributes().computeIfPresent(CLASS, (k, v) -> v + ' ' + String.join(" ", classSelectors));
-            }
+            attributes().computeIfPresent(CLASS, (k, v) -> v + ' ' + String.join(" ", classSelectors));
+            attributes().putIfAbsent(CLASS, String.join(" ", classSelectors));
         }
         return (C) this;
     }

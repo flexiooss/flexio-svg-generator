@@ -8,6 +8,7 @@ public abstract class Attributes<C extends Attribute> implements Attribute {
 
     private final Map<String, String> attributes = new LinkedHashMap<>();
 
+    @SuppressWarnings("unchecked")
     @Override
     public final C attributes(String name, String value) {
         attributes().put(name, value);

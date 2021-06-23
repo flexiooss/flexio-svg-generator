@@ -4,13 +4,14 @@ import io.flexio.svg.generator.generator.Attribute;
 
 import java.util.Locale;
 
-public interface Stylable<C extends Stylable> extends Attribute {
-    default C style(String style) {
+public interface Stylable<S extends Stylable> extends Attribute {
+    @SuppressWarnings("unchecked")
+    default S style(String style) {
         attributes("style", style);
-        return (C) this;
+        return (S) this;
     }
 
-    default C style(String format, Object... args) {
+    default S style(String format, Object... args) {
         return this.style(String.format(Locale.US, format, args));
     }
 }

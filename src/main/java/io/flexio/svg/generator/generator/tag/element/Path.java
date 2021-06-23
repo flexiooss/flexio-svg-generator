@@ -2,15 +2,18 @@ package io.flexio.svg.generator.generator.tag.element;
 
 import io.flexio.svg.generator.generator.Attribute;
 import io.flexio.svg.generator.generator.Element;
-import io.flexio.svg.generator.generator.SVGElementAttributes;
+import io.flexio.svg.generator.generator.SVGElementAttribute;
 import io.flexio.svg.generator.generator.tag.property.Fillable;
+import io.flexio.svg.generator.generator.tag.property.PathLengthHolder;
 import io.flexio.svg.generator.generator.tag.property.Strokable;
-import io.flexio.svg.generator.generator.tag.property.StrokeWidthable;
+import io.flexio.svg.generator.generator.tag.property.StrokeWidthHolder;
+import io.flexio.svg.generator.generator.writer.ElementWriter;
 
-public class Path extends SVGElementAttributes<Path> implements Element, Fillable<Path>, Strokable<Path>, StrokeWidthable<Path> {
+public class Path extends SVGElementAttribute<Path> implements Element, Fillable<Path>, Strokable<Path>, StrokeWidthHolder<Path>, PathLengthHolder<Path> {
+    private static final String path = "path";
     @Override
     public String name() {
-        return "path";
+        return path;
     }
 
     @Override
@@ -21,5 +24,9 @@ public class Path extends SVGElementAttributes<Path> implements Element, Fillabl
     public Path path(String d) {
         attributes("d", d);
         return this;
+    }
+
+    public void autoClosed(ElementWriter writer) {
+        writer.autoClosed(path);
     }
 }

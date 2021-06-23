@@ -1,6 +1,6 @@
 package io.flexio.svg.generator.generator.writer;
 
-import io.flexio.svg.generator.generator.SVGElementAttributes;
+import io.flexio.svg.generator.generator.SVGElementAttribute;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,12 +16,12 @@ public class DataTransportableTest {
     private final static String encodedData = new String(Base64.getEncoder().encode(originalData.getBytes()));
 
     private Map<String, String> attributes;
-    private SVGElementAttributes markup;
+    private SVGElementAttribute markup;
 
     @Before
     public void setup(){
         attributes = new HashMap<>();
-        markup = new SVGElementAttributes() {
+        markup = new SVGElementAttribute() {
             @Override
             public Map<String, String> attributes() {
                 return attributes;
