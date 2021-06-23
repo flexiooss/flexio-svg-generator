@@ -44,6 +44,20 @@ public class Circle extends SVGElementAttribute<Circle> implements Element,
         return this;
     }
 
+    @Override
+    public Circle position(String x, String y) {
+        attributes("cx", x);
+        attributes("cy", y);
+        return this;
+    }
+
+    @Override
+    public Circle position(double x, double y) {
+        attributes("cx", String.format(Locale.US, "%.5f", x));
+        attributes("cy", String.format(Locale.US, "%.5f", y));
+        return this;
+    }
+
     public void autoClosed(ElementWriter writer) {
         writer.autoClosed(this);
     }

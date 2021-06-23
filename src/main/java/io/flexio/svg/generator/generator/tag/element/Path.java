@@ -27,6 +27,6 @@ public class Path extends SVGElementAttribute<Path> implements Element,
     }
 
     public void autoClosed(ElementWriter writer) {
-        writer.autoClosed(path);
+        writer.autoClosed(this);
     }
 }
