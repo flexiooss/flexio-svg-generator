@@ -1,17 +1,15 @@
-package io.flexio.svg.generator.generator.tag.element;
+package io.flexio.svg.generator.generator.tag.element.svg;
 
-import io.flexio.svg.generator.generator.Attribute;
-import io.flexio.svg.generator.generator.Element;
-import io.flexio.svg.generator.generator.SVGElementAttribute;
+import io.flexio.svg.generator.generator.ClosableElement;
+import io.flexio.svg.generator.generator.tag.element.SVGElement;
 import io.flexio.svg.generator.generator.tag.property.ClipPathHolder;
 import io.flexio.svg.generator.generator.tag.property.OpacityHolder;
 import io.flexio.svg.generator.generator.tag.property.Positionable;
 import io.flexio.svg.generator.generator.tag.property.Rotatable;
 import io.flexio.svg.generator.generator.tag.type.Point;
-import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 
-public class Tspan extends SVGElementAttribute<Tspan> implements Element,
+public final class Tspan extends ClosableElement<Tspan> implements SVGElement<Tspan>,
         Positionable<Tspan>, Rotatable<Tspan>, ClipPathHolder<Tspan>, OpacityHolder<Tspan>
 {
     private static final String tspan = "tspan";
@@ -20,22 +18,9 @@ public class Tspan extends SVGElementAttribute<Tspan> implements Element,
         return tspan;
     }
 
-    @Override
-    public Attribute attribute() {
-        return this;
-    }
-
     public Tspan relativePosition(Point position) {
         attributes("dx", position.x());
         attributes("dy", position.y());
         return this;
-    }
-
-    public void open(ElementWriter writer) {
-        writer.open(this);
-    }
-
-    public static void close(ElementWriter writer) {
-        writer.close(tspan);
     }
 }

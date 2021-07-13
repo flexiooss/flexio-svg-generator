@@ -1,15 +1,13 @@
-package io.flexio.svg.generator.generator.tag.element;
+package io.flexio.svg.generator.generator.tag.element.svg;
 
-import io.flexio.svg.generator.generator.Attribute;
-import io.flexio.svg.generator.generator.Element;
-import io.flexio.svg.generator.generator.SVGElementAttribute;
+import io.flexio.svg.generator.generator.ClosableElement;
+import io.flexio.svg.generator.generator.tag.element.SVGElement;
 import io.flexio.svg.generator.generator.tag.property.*;
-import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 import java.math.BigDecimal;
 import java.util.Locale;
 
-public class Text extends SVGElementAttribute<Text> implements Element,
+public final class Text extends ClosableElement<Text> implements SVGElement<Text>,
         Positionable<Text>, Fillable<Text>, Strokable<Text>, StrokeWidthHolder<Text>, Rotatable<Text>, ClipPathHolder<Text>,
         OpacityHolder<Text>
 {
@@ -17,11 +15,6 @@ public class Text extends SVGElementAttribute<Text> implements Element,
     @Override
     public String name() {
         return text;
-    }
-
-    @Override
-    public Attribute attribute() {
-        return this;
     }
 
     public Text fontFamily(String value) {
@@ -112,13 +105,5 @@ public class Text extends SVGElementAttribute<Text> implements Element,
                 return "end";
             }
         }
-    }
-
-    public void open(ElementWriter writer) {
-        writer.open(this);
-    }
-
-    public static void close(ElementWriter writer) {
-        writer.close(text);
     }
 }

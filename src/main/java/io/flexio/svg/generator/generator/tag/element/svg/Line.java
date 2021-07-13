@@ -1,24 +1,18 @@
-package io.flexio.svg.generator.generator.tag.element;
+package io.flexio.svg.generator.generator.tag.element.svg;
 
-import io.flexio.svg.generator.generator.Attribute;
-import io.flexio.svg.generator.generator.Element;
-import io.flexio.svg.generator.generator.SVGElementAttribute;
+import io.flexio.svg.generator.generator.AutoClosableElement;
+import io.flexio.svg.generator.generator.tag.element.SVGElement;
 import io.flexio.svg.generator.generator.tag.property.*;
 import io.flexio.svg.generator.generator.tag.type.Point;
 import io.flexio.svg.generator.generator.writer.ElementWriter;
 
-public class Line extends SVGElementAttribute<Line> implements Element,
+public final class Line extends AutoClosableElement<Line> implements SVGElement<Line>,
         Fillable<Line>, Strokable<Line>, StrokeWidthHolder<Line> , ClipPathHolder<Line>, OpacityHolder<Line>
 {
     private static final String line = "line";
     @Override
     public String name() {
         return line;
-    }
-
-    @Override
-    public Attribute attribute() {
-        return this;
     }
 
     public Line positionStart(Point position) {

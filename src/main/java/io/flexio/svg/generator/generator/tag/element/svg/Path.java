@@ -1,12 +1,11 @@
-package io.flexio.svg.generator.generator.tag.element;
+package io.flexio.svg.generator.generator.tag.element.svg;
 
-import io.flexio.svg.generator.generator.Attribute;
-import io.flexio.svg.generator.generator.Element;
-import io.flexio.svg.generator.generator.SVGElementAttribute;
+import io.flexio.svg.generator.generator.AutoClosableElement;
+import io.flexio.svg.generator.generator.tag.element.SVGElement;
 import io.flexio.svg.generator.generator.tag.property.*;
 import io.flexio.svg.generator.generator.writer.ElementWriter;
 
-public class Path extends SVGElementAttribute<Path> implements Element,
+public final class Path extends AutoClosableElement<Path> implements SVGElement<Path>,
         Fillable<Path>, Strokable<Path>, StrokeWidthHolder<Path>, PathLengthHolder<Path> , ClipPathHolder<Path>,
         OpacityHolder<Path>
 {
@@ -14,11 +13,6 @@ public class Path extends SVGElementAttribute<Path> implements Element,
     @Override
     public String name() {
         return path;
-    }
-
-    @Override
-    public Attribute attribute() {
-        return this;
     }
 
     public Path path(String d) {

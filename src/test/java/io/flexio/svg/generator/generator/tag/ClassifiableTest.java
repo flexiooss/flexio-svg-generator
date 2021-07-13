@@ -1,6 +1,6 @@
 package io.flexio.svg.generator.generator.tag;
 
-import io.flexio.svg.generator.generator.tag.element.Group;
+import io.flexio.svg.generator.generator.tag.element.svg.Group;
 import io.flexio.svg.generator.generator.tag.property.Classifiable;
 import org.junit.Test;
 
@@ -13,15 +13,15 @@ public class ClassifiableTest {
     @Test
     public void OneClass() {
         Classifiable c = new Group().classSelector(classes[0]);
-        assertThat(c.attributes(), hasEntry("class", classes[0]));
+        assertThat(c.attributesMap(), hasEntry("class", classes[0]));
     }
 
     @Test
     public void multipleClasses() {
         Classifiable c = new Group().classSelector(classes[0]);
-        assertThat(c.attributes(), hasEntry("class", classes[0]));
+        assertThat(c.attributesMap(), hasEntry("class", classes[0]));
 
         c.classSelector(classes[1], classes[2]);
-        assertThat(c.attributes(), hasEntry("class", String.join(" ", classes)));
+        assertThat(c.attributesMap(), hasEntry("class", String.join(" ", classes)));
     }
 }

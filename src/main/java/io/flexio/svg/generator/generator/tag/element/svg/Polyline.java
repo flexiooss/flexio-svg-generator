@@ -1,14 +1,12 @@
-package io.flexio.svg.generator.generator.tag.element;
+package io.flexio.svg.generator.generator.tag.element.svg;
 
-import io.flexio.svg.generator.generator.Attribute;
-import io.flexio.svg.generator.generator.Element;
-import io.flexio.svg.generator.generator.SVGElementAttribute;
+import io.flexio.svg.generator.generator.AutoClosableElement;
+import io.flexio.svg.generator.generator.tag.element.SVGElement;
 import io.flexio.svg.generator.generator.tag.property.*;
-import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 import java.util.Locale;
 
-public class Polyline extends SVGElementAttribute<Polyline> implements Element,
+public final class Polyline extends AutoClosableElement<Polyline> implements SVGElement<Polyline>,
         Fillable<Polyline>, Strokable<Polyline>, StrokeWidthHolder<Polyline>, ClipPathHolder<Polyline>,
         OpacityHolder<Polyline>
 {
@@ -18,11 +16,6 @@ public class Polyline extends SVGElementAttribute<Polyline> implements Element,
         return polyline;
     }
 
-    @Override
-    public Attribute attribute() {
-        return this;
-    }
-
     public Polyline points(String points) {
         attributes("points", points);
         return this;
@@ -30,9 +23,5 @@ public class Polyline extends SVGElementAttribute<Polyline> implements Element,
 
     public Polyline points(String format, Object... args) {
         return this.points(String.format(Locale.US, format, args));
-    }
-
-    public void autoClosed(ElementWriter writer) {
-        writer.autoClosed(this);
     }
 }

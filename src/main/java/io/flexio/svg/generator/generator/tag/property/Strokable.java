@@ -10,7 +10,7 @@ public interface Strokable<S extends Strokable> extends Attribute {
         final String strokeProperty = "stroke", defaultValue = "none";
 
         if (stroke.equals(defaultValue)) {
-            attributes().remove(strokeProperty);
+            attributesMap().remove(strokeProperty);
         } else {
             attributes(strokeProperty, stroke);
         }

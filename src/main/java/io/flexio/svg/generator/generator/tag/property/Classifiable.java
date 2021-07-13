@@ -10,8 +10,8 @@ public interface Classifiable<C extends Classifiable> extends Attribute {
     @SuppressWarnings("unchecked")
     default C classSelector(String... classSelectors) {
         if (classSelectors.length > 0) {
-            attributes().computeIfPresent(CLASS, (k, v) -> v + ' ' + String.join(" ", classSelectors));
-            attributes().putIfAbsent(CLASS, String.join(" ", classSelectors));
+            attributesMap().computeIfPresent(CLASS, (k, v) -> v + ' ' + String.join(" ", classSelectors));
+            attributesMap().putIfAbsent(CLASS, String.join(" ", classSelectors));
         }
         return (C) this;
     }

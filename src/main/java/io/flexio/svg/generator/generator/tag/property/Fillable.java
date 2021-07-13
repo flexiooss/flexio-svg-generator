@@ -10,7 +10,7 @@ public interface Fillable<C extends Fillable> extends Attribute {
         final String fillProperty = "fill", defaultValue = "black";
 
         if (fill.equals(defaultValue)) {
-            attributes().remove(fillProperty);
+            attributesMap().remove(fillProperty);
         } {
             attributes(fillProperty, fill);
         }

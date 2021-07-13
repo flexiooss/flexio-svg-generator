@@ -20,7 +20,7 @@ public interface OpacityHolder<O extends OpacityHolder<O>> extends Attribute {
     @SuppressWarnings("unchecked")
     default O opacity(double opacity) {
         if (opacity == 1d) {
-            this.attributes().remove("opacity");
+            this.attributesMap().remove("opacity");
             return (O) this;
         }
 

@@ -1,27 +1,20 @@
-package io.flexio.svg.generator.generator.tag.element;
+package io.flexio.svg.generator.generator.tag.element.svg;
 
-import io.flexio.svg.generator.generator.Attribute;
-import io.flexio.svg.generator.generator.Element;
-import io.flexio.svg.generator.generator.SVGElementAttribute;
+import io.flexio.svg.generator.generator.AutoClosableElement;
+import io.flexio.svg.generator.generator.tag.element.SVGElement;
 import io.flexio.svg.generator.generator.tag.property.*;
 import io.flexio.svg.generator.generator.tag.type.Point;
-import io.flexio.svg.generator.generator.writer.ElementWriter;
 
 import java.math.BigDecimal;
 import java.util.Locale;
 
-public class Circle extends SVGElementAttribute<Circle> implements Element,
+public final class Circle extends AutoClosableElement<Circle> implements SVGElement<Circle>,
         Fillable<Circle>, Strokable<Circle>, StrokeWidthHolder<Circle>, Positionable<Circle>, ClipPathHolder<Circle>,
         OpacityHolder<Circle>
 {
     @Override
     public String name() {
         return "circle";
-    }
-
-    @Override
-    public Attribute attribute() {
-        return this;
     }
 
     public Circle radius(String radius) {
@@ -56,9 +49,5 @@ public class Circle extends SVGElementAttribute<Circle> implements Element,
         attributes("cx", String.format(Locale.US, "%.5f", x));
         attributes("cy", String.format(Locale.US, "%.5f", y));
         return this;
-    }
-
-    public void autoClosed(ElementWriter writer) {
-        writer.autoClosed(this);
     }
 }

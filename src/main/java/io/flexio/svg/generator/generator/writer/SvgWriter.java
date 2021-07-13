@@ -34,7 +34,7 @@ public class SvgWriter implements ElementWriter {
     private static String printAttributes(Attribute attributes) {
         StringBuilder stringBuilder = new StringBuilder();
         if (attributes != null) {
-            attributes.attributes().forEach((key, value) -> {
+            attributes.attributesMap().forEach((key, value) -> {
                 stringBuilder.append(" ")
                         .append(key)
                         .append("=\"")

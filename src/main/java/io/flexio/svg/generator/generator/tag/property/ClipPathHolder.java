@@ -17,8 +17,8 @@ public interface ClipPathHolder<C extends ClipPathHolder> extends Attribute {
 
     @SuppressWarnings("unchecked")
     default C clipPath(Identifiable element) {
-        if (element.attributes().containsKey(Identifiable.ID)) {
-            return clipPath("url(#%s)", element.attributes().get(Identifiable.ID));
+        if (element.attributesMap().containsKey(Identifiable.ID)) {
+            return clipPath("url(#%s)", element.attributesMap().get(Identifiable.ID));
         }
         return (C) this;
     }
