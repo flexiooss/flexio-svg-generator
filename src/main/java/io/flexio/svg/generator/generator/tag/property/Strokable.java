@@ -5,8 +5,16 @@ import io.flexio.svg.generator.generator.Attribute;
 import java.util.Locale;
 
 public interface Strokable<S extends Strokable> extends Attribute {
+    @SuppressWarnings("unchecked")
     default S stroke(String stroke) {
-        attributes("stroke", stroke);
+        final String strokeProperty = "stroke", defaultValue = "none";
+
+        if (stroke.equals(defaultValue)) {
+            attributesMap().remove(strokeProperty);
+        } else {
+            attributes(strokeProperty, stroke);
+        }
+
         return (S) this;
     }
 

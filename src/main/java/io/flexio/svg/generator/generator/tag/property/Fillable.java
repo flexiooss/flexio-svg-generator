@@ -5,8 +5,16 @@ import io.flexio.svg.generator.generator.Attribute;
 import java.util.Locale;
 
 public interface Fillable<C extends Fillable> extends Attribute {
+    @SuppressWarnings("unchecked")
     default C fill(String fill) {
-        attributes("fill", fill);
+        final String fillProperty = "fill", defaultValue = "black";
+
+        if (fill.equals(defaultValue)) {
+            attributesMap().remove(fillProperty);
+        } {
+            attributes(fillProperty, fill);
+        }
+
         return (C) this;
     }
 

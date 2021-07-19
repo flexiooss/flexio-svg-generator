@@ -1,8 +1,8 @@
 package io.flexio.svg.generator.generator.writer;
 
 import io.flexio.svg.generator.generator.Attribute;
-import io.flexio.svg.generator.generator.tag.element.Circle;
-import io.flexio.svg.generator.generator.tag.element.Group;
+import io.flexio.svg.generator.generator.tag.element.svg.Circle;
+import io.flexio.svg.generator.generator.tag.element.svg.Group;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

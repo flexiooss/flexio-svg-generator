@@ -5,7 +5,8 @@ import io.flexio.svg.generator.generator.Attribute;
 import java.math.BigDecimal;
 import java.util.Locale;
 
-public interface StrokeWidthable<S extends StrokeWidthable> extends Attribute {
+public interface StrokeWidthHolder<S extends StrokeWidthHolder> extends Attribute {
+    @SuppressWarnings("unchecked")
     default S strokeWidth(String strokeWidth) {
         attributes("stroke-width", strokeWidth);
         return (S) this;
@@ -16,7 +17,7 @@ public interface StrokeWidthable<S extends StrokeWidthable> extends Attribute {
     }
 
     default S strokeWidth(double strokeWidth) {
-        return this.strokeWidth(String.format(Locale.US, "%.5f",strokeWidth));
+        return this.strokeWidth("%.5f", strokeWidth);
     }
 
     default S strokeWidth(BigDecimal strokeWidth) {
@@ -24,7 +25,7 @@ public interface StrokeWidthable<S extends StrokeWidthable> extends Attribute {
     }
 
     default S strokeWidthPercent(double strokeWidth) {
-        return this.strokeWidth(String.format(Locale.US, "%.5f",strokeWidth) + '%');
+        return this.strokeWidth("%.5f%%", strokeWidth);
     }
 
     default S strokeWidthPercent(BigDecimal strokeWidth) {

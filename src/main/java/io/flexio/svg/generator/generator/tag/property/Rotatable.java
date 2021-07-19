@@ -5,13 +5,18 @@ import io.flexio.svg.generator.generator.Attribute;
 import java.util.Locale;
 
 public interface Rotatable<R extends Rotatable> extends Attribute {
+    @SuppressWarnings("unchecked")
     default R rotate(String mode) {
         this.attributes("rotate", mode);
         return (R) this;
     }
 
+    default R rotate(String modeFormat, Object... args) {
+        return this.rotate(String.format(Locale.US, modeFormat, args));
+    }
+
     default R rotate(double alpha) {
-        return this.rotate(String.format(Locale.US, "%.5f", alpha));
+        return this.rotate( "%.5f", alpha);
     }
 
     default R rotate(Mode mode) {
@@ -19,12 +24,13 @@ public interface Rotatable<R extends Rotatable> extends Attribute {
     }
 
     enum Mode {
-        auto{
+        AUTO {
             @Override
             public String toString() {
                 return "auto";
             }
-        }, reverse{
+        },
+        REVERSE {
             @Override
             public String toString() {
                 return "auto-reverse";

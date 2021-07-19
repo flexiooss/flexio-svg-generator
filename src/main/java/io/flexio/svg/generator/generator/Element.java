@@ -1,20 +1,32 @@
 package io.flexio.svg.generator.generator;
 
-public interface Element {
-    String name();
-    Attribute attribute();
+import io.flexio.svg.generator.generator.tag.property.Classifiable;
+import io.flexio.svg.generator.generator.tag.property.Identifiable;
+import io.flexio.svg.generator.generator.tag.property.Stylable;
+import io.flexio.svg.generator.generator.writer.ElementWriter;
 
-    static Element withoutAttribute(String name) {
-        return new Element() {
-            @Override
-            public String name() {
-                return name;
-            }
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-            @Override
-            public Attribute attribute() {
-                return Attributes.EMPTY;
-            }
-        };
+public abstract class Element<E extends Element> implements Attribute,
+        Identifiable<E>, Classifiable<E>, Stylable<E>
+{
+    private final Map<String, String> attributes = new LinkedHashMap<>();
+
+    public abstract String name();
+
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public final E attributes(String name, String value) {
+        attributesMap().put(name, value);
+        return (E) this;
     }
+
+    @Override
+    public Map<String, String> attributesMap() {
+        return attributes;
+    }
+    
+    public abstract void open(ElementWriter writer);
 }
