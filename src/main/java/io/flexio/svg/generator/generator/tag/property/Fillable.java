@@ -24,7 +24,7 @@ public interface Fillable<F extends Fillable> extends Attribute {
     }
 
 
-    String FILL_OPACITY = "fill-Opacity";
+    String FILL_OPACITY = "fill-opacity";
     @SuppressWarnings("unchecked")
     default F fillOpacity(String fill) {
         final String defaultValue = "1";
