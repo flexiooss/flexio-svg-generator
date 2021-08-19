@@ -6,10 +6,17 @@ import java.math.BigDecimal;
 import java.util.Locale;
 
 public interface OpacityHolder<O extends OpacityHolder<O>> extends Attribute {
+    String OPACITY = "opacity";
     @SuppressWarnings("unchecked")
     default O opacity(String opacity) {
-        final String opacityProperty = "opacity";
-        attributes("stroke-width", opacity);
+        final String defaultValue = "1";
+
+        if (defaultValue.equals(opacity)) {
+            this.attributesMap().remove(OPACITY);
+        } else {
+            attributes(OPACITY, opacity);
+        }
+
         return (O) this;
     }
 
@@ -19,12 +26,14 @@ public interface OpacityHolder<O extends OpacityHolder<O>> extends Attribute {
 
     @SuppressWarnings("unchecked")
     default O opacity(double opacity) {
+        opacity = Math.min(Math.max(opacity, 0d), 1d);
+
         if (opacity == 1d) {
-            this.attributesMap().remove("opacity");
+            this.attributesMap().remove(OPACITY);
             return (O) this;
         }
 
-        return this.opacity("%.5f", opacity);
+        return this.opacity(NUMERIC_FORMAT, opacity);
     }
 
     default O opacity(BigDecimal opacity) {

@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Objects;
 
+import static io.flexio.svg.generator.generator.Attribute.NUMERIC_FORMAT;
+
 public class Point {
     String x;
     String y;
@@ -13,7 +15,7 @@ public class Point {
     }
 
     public Point(double x, double y) {
-        this(String.format(Locale.US, "%.5f", x), String.format(Locale.US, "%.5f", y));
+        this(String.format(Locale.US, NUMERIC_FORMAT, x), String.format(Locale.US, NUMERIC_FORMAT, y));
     }
 
     public Point(String x, String y) {

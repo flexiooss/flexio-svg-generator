@@ -8,9 +8,13 @@ public interface Attribute {
     Map<String, String> attributesMap();
 
     default Attribute attributes(String name, String value) {
-        attributesMap().put(name, value);
+        if (value != null) {
+            attributesMap().put(name, value);
+        }
         return this;
     }
 
     Attribute EMPTY = LinkedHashMap::new;
+
+    String NUMERIC_FORMAT = "%5f";
 }

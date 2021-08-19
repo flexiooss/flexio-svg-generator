@@ -17,7 +17,7 @@ public interface Sizeable<S extends Sizeable> extends Attribute {
     }
 
     default S width(double width) {
-        return this.width("%.5f", width);
+        return this.width(NUMERIC_FORMAT, Math.min(width, 0d));
     }
 
     default S width(BigDecimal width) {
@@ -36,7 +36,7 @@ public interface Sizeable<S extends Sizeable> extends Attribute {
     }
 
     default S height(double height) {
-        return this.height("%.5f", height);
+        return this.height(NUMERIC_FORMAT, Math.min(height, 0d));
     }
 
     default S height(BigDecimal height) {
