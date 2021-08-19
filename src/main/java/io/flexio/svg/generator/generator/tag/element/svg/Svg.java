@@ -38,7 +38,7 @@ public final class Svg extends ClosableElement<Svg> implements SVGElement<Svg>, 
     }
 
     public Svg viewBox(double width, double height) {
-        return this.viewBox("0 0 %.5f %.5f", width, height);
+        return this.viewBox("0 0 "+NUMERIC_FORMAT+" "+NUMERIC_FORMAT, width, height);
     }
 
     public Svg viewBox(int minX, int minY, int width, int height) {
@@ -50,6 +50,9 @@ public final class Svg extends ClosableElement<Svg> implements SVGElement<Svg>, 
     }
 
     public Svg viewBox(double minX, double minY, double width, double height) {
-        return this.viewBox("%.5f %.5f %.5f %.5f", minX, minY, width, height);
+        return this.viewBox(
+                NUMERIC_FORMAT+" "+NUMERIC_FORMAT+" "+NUMERIC_FORMAT+" "+NUMERIC_FORMAT,
+                minX, minY, width, height
+        );
     }
 }
