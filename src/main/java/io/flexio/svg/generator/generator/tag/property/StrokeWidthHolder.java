@@ -17,7 +17,7 @@ public interface StrokeWidthHolder<S extends StrokeWidthHolder> extends Attribut
     }
 
     default S strokeWidth(double strokeWidth) {
-        return this.strokeWidth("%.5f", strokeWidth);
+        return this.strokeWidth(NUMERIC_FORMAT, strokeWidth);
     }
 
     default S strokeWidth(BigDecimal strokeWidth) {
@@ -25,7 +25,7 @@ public interface StrokeWidthHolder<S extends StrokeWidthHolder> extends Attribut
     }
 
     default S strokeWidthPercent(double strokeWidth) {
-        return this.strokeWidth("%.5f%%", strokeWidth);
+        return this.strokeWidth(NUMERIC_FORMAT+"%%", strokeWidth);
     }
 
     default S strokeWidthPercent(BigDecimal strokeWidth) {

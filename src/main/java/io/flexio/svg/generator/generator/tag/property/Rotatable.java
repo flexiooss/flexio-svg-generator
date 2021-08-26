@@ -16,7 +16,7 @@ public interface Rotatable<R extends Rotatable> extends Attribute {
     }
 
     default R rotate(double alpha) {
-        return this.rotate( "%.5f", alpha);
+        return this.rotate(NUMERIC_FORMAT, alpha);
     }
 
     default R rotate(Mode mode) {
