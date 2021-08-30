@@ -10,7 +10,7 @@ public interface Fillable<F extends Fillable> extends Attribute {
     default F fill(String fill) {
         final String fillProperty = "fill", defaultValue = "black";
 
-        if (fill.equals(defaultValue)) {
+        if (defaultValue.equals(fill)) {
             attributesMap().remove(fillProperty);
         } else {
             attributes(fillProperty, fill);
